@@ -1,0 +1,11 @@
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\bin\Debug\MonaDemos.exe.config
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\bin\Debug\MonaDemos.exe
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\bin\Debug\MonaDemos.pdb
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\obj\Debug\MonaDemos.csproj.CoreCompileInputs.cache
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\obj\Debug\MonaDemos.csproj.CopyComplete
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\obj\Debug\MonaDemos.exe
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\obj\Debug\MonaDemos.pdb
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\bin\Debug\json1.json
+C:\Users\mxzhao\source\repos\MonaDemos\MonaDemos\obj\Debug\MonaDemos.csprojAssemblyReference.cache
