@@ -9,7 +9,8 @@ namespace MonaDemos.algorithmDemo
     //定义一个单链表
     public class DLinkList
     {
-        private LinkListNode next;
+        private LinkListNode head;
+        private int length;
 
         public LinkListNode Head
         { get; set; }
@@ -21,6 +22,11 @@ namespace MonaDemos.algorithmDemo
         {
             Head = null;
             Length = 0;
+        }
+
+        public DLinkList(LinkListNode headNode)
+        {
+            Head = headNode;
         }
 
         //给单链表添加结点 - 尾部插入
@@ -72,7 +78,7 @@ namespace MonaDemos.algorithmDemo
             while (currentNode != null)
             {
                 Console.WriteLine(currentNode.Data);
-                currentNode = currentNode.Next;
+                currentNode = currentNode.Next; //遍历单链表
             }
         }
 
@@ -96,15 +102,14 @@ namespace MonaDemos.algorithmDemo
         //单链表翻转
         public LinkListNode ReverseLinkList(LinkListNode head)
         {
-            LinkListNode node = new LinkListNode(head, next);
-            if (node == null || node.Next == null)
+            if (head == null || head.Next == null)
             {
-                return node;
+                return head;
             }
 
             LinkListNode nextNode = null;
             LinkListNode preNode = null;
-            LinkListNode currencNode = node;
+            LinkListNode currencNode = head;
             while (currencNode != null)
             {
                 currencNode.setNext(preNode); //将当前node的next域指向preNode

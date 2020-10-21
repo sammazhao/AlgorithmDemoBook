@@ -14,9 +14,8 @@ namespace MonaDemos.algorithmDemo
         public LinkListNode Next
         { get; set; }
 
-        public LinkListNode(object nodeData, LinkListNode node)
+        public LinkListNode(LinkListNode node)
         {
-            Data = nodeData;
             Next = node;
         }
 

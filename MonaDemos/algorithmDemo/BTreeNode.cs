@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace MonaDemos.algorithmDemo
 {
+
     //二叉链表结点类
     public class BTreeNode<T>
     {
         private T data; //数据域
-        private BTreeNode<T> lchild;
-        private BTreeNode<T> rchild;
+        private BTreeNode<T> lchild; //左指针
+        private BTreeNode<T> rchild; //右指针
 
         public BTreeNode(T value, BTreeNode<T> lc, BTreeNode<T> rc)
         {
@@ -78,6 +79,5 @@ namespace MonaDemos.algorithmDemo
                 Console.WriteLine(rootNode.Data);
             }
         }
-
     }
 }
