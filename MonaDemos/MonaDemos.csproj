@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="algorithmDemo\BTree.cs" />
     <Compile Include="algorithmDemo\BTreeNode.cs" />
-    <Compile Include="algorithmDemo\DLinkList.cs" />
+    <Compile Include="algorithmDemo\DLinkListActionDemo.cs" />
     <Compile Include="algorithmDemo\LinkListNode.cs" />
     <Compile Include="algorithmDemo\SortingDemo.cs" />
     <Compile Include="algorithmDemo\LeetCodeSolution.cs" />

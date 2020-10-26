@@ -41,7 +41,7 @@ namespace MonaDemos.algorithmDemo
         }
 
 
-        //Title: 字符串翻转
+        //Title: 字符串翻转 实现1
         //hello world翻转成world hello
         public string ReverseString()
         {
@@ -74,6 +74,25 @@ namespace MonaDemos.algorithmDemo
 
             }
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// Title: 字符串翻转 实现2. 思路： 只需要遍历char数组中一半的元素就可以了，数组长度为奇数时中间的一个元素不需要管，而int类型除以2正好没有带上中间的元素
+        /// </summary>
+        /// <param name="s">char string </param>
+        /// <returns>string after reversing </returns>
+        public string ReverseString2(string s)
+        {
+            char[] chars = s.ToCharArray();
+            char temp;
+            int length = chars.Length;
+            for (int i = 0, j = length - 1; i < length / 2; i++, j--)
+            {
+                temp = chars[i];
+                chars[i] = chars[j];
+                chars[j] = temp;
+            }
+            return new string(chars);
         }
 
 
@@ -156,7 +175,7 @@ namespace MonaDemos.algorithmDemo
 
         //思路
         //一个简单的实现使用了两次迭代。在第一次迭代中，我们将每个元素的值和它的索引添加到表中。
-        //然后，在第二次迭代中，我们将检查每个元素所对应的目标元素（target - nums[i]target−nums[i]）是否存在于表中。注意，该目标元素不能是nums[i] 本身！
+        //然后，在第二次迭代中，我们将检查每个元素所对应的目标元素（target - nums[i]）是否存在于表中。注意，该目标元素不能是nums[i] 本身！
         // nums = {2,3,4,5,0,7}. target = 8
         public List<int> SumTest(int[] list, int target)
         {
@@ -170,15 +189,14 @@ namespace MonaDemos.algorithmDemo
             {
                 int component = target - list[i];
                 int componentIndex = 0;
-                if (kvp.ContainsKey(component) && kvp.TryGetValue(component, out componentIndex))
+                if (kvp.ContainsKey(component) && kvp.TryGetValue(component, out componentIndex)) //TryGetValue: 返回dict中是否包含这个key，并且out返回key对应的value，如果没有找到key， 则返回value的数据类型的default value
                 {
                     if (componentIndex != i)
                     {
                         result.Add(i);
-
+                        result.Add(componentIndex);
                         //数组中同一个元素不能使用两遍，so找到后需要从list'中remove这两个元素
                         kvp.Remove(component);
-                        result.Add(componentIndex);
                         kvp.Remove(list[i]);
                     }
                     else
@@ -192,21 +210,21 @@ namespace MonaDemos.algorithmDemo
 
         // title: 字符串的左旋转
         //操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串"abcdefg"和数字2，该函数将返回左旋转两位得到的结果"cdefgab"
-        //思路： 1. 取当前字符串的长度。旋转的数字<= 长度，2. 根据要旋转的字符从原处删除，添加到尾部
+        //思路： 1. 取当前字符串的长度。旋转的数字<= 长度，2. 添加非旋转部分到新的array中， 再添加旋转的部分到新的array尾部
         public string LeftTurnStringTest(string strOrigin, int turnAmount)
         {
             char[] charArr = strOrigin.ToCharArray();
 
-            StringBuilder res = new StringBuilder();
+            StringBuilder result = new StringBuilder();
             for (int i = turnAmount; i < strOrigin.Length; i++)
             {
-                res.Append(charArr[i]);
+                result.Append(charArr[i]);
             }
             for (int i = 0; i < turnAmount; i++)
             {
-                res.Append(charArr[i]);
+                result.Append(charArr[i]);
             }
-            return res.ToString();
+            return result.ToString();
         }
 
         //Title: 移动0
@@ -306,8 +324,7 @@ namespace MonaDemos.algorithmDemo
                 if (kvp.ContainsKey(charArray[i]))
                 {
                     kvp.TryGetValue(charArray[i], out count);
-                    count += 1;
-                    //更改计数器的值 +1
+                    count += 1; //更改计数器的值 +1
                     kvp[charArray[i]] = count;
                 }
                 else
